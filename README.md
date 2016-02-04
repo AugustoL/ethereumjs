@@ -28,6 +28,7 @@ Create a new folder where you testnet will be located with a genesis.json file w
 	}
 }
 ```
+More info about the genesis creation here: http://adeduke.com/2015/08/how-to-create-a-private-ethereum-chain/
 
 ## Create your new account && start mining
 
