@@ -53,3 +53,14 @@ Now that we are mining we can run our app.
 Once you are mining you can start another console and go to the app directory, if you are going to develop and make changes on the app run it using the -dev argument for better debug on the client files.
 
 `node index.js -dev` or `node index.js`
+
+## Store contracts on mongodb
+
+If you want to store all your contracts on your local mongodb you will need: Mongo running locally, a db with a user created, set up the dbURI on config.js and run the app with the -store arg. Here are the steps:
+
+1. Install mongo, more info here: https://docs.mongodb.org/manual/installation/
+2. Run your mongo console, if you type `mongo` it should work, if not use `mongo --host 127.0.0.1 --port 27017`.
+3. Create a new db called ethereumjs with `use etehreumjs`.
+4. Create a new user with `db.createUser( { user: "USERNAME", pwd: "PASSWORD", roles: [ "readWrite", "dbAdmin" ] } )`.
+5. Add the dbURI to your config.js like `mongodb://USERNAME:PASSWORD@127.0.0.1:27017/ethereumjs`
+6. Run the app with the -store arg and you will eb able to see the store section on the app.
