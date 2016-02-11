@@ -1,0 +1,27 @@
+{
+  "name": "EthereumJS",
+  "version": "0.0.1",
+  "authors": [
+    "Augusto Lemble <me@augustolemble.com>"
+  ],
+  "main": "node index.js",
+  "license": "MIT",
+  "homepage": "augustolemble.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "/public/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "angular": "latest",
+    "angular-route": "latest",
+    "angular-local-storage": "latest",
+    "bootstrap": "latest",
+    "font-awesome": "~4.3.0"
+  }
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="ethJS">
+    <head>
+        <base href="/">
+        <title >Ethereum JS</title>
+        <meta name="description" content="Description" />
+        <meta name="keywords" content="Keywords" />
+        <meta name="author" content="Augusto Lemble">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="/dist/res/eth.ico" type="image/x-icon">
+        <!-- CSS and LESS -->
+        <link rel="stylesheet" href="/dist/libs/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/dist/libs/bootstrap/dist/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="/dist/libs/font-awesome/css/font-awesome.css">
+        <link rel="stylesheet" href="/dist/css/styles.css">
+        <!-- LIBS -->
+        <script type="text/javascript" src="/dist/libs/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="/dist/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/dist/libs/angular/angular.min.js"></script>
+        <script type="text/javascript" src="/dist/libs/angular-local-storage/dist/angular-local-storage.min.js"></script>
+        <script type="text/javascript" src="/dist/libs/angular-route/angular-route.min.js"></script>
+        <!-- ANGULAR -->
+        <script type="text/javascript" src="/dist/angular/appCore.js"></script>
+        <script type="text/javascript" src="/dist/angular/directives/footer.js"></script>
+        <script type="text/javascript" src="/dist/angular/directives/navbar.js"></script>
+        <script type="text/javascript" src="/dist/angular/services/appService.js"></script>
+        <script type="text/javascript" src="/dist/angular/controllers/navBarController.js"></script>
+        <script type="text/javascript" src="/dist/angular/controllers/homeController.js"></script>
+        <script type="text/javascript" src="/dist/angular/controllers/dbController.js"></script>
+        <script type="text/javascript" src="/dist/angular/controllers/scriptsController.js"></script>
+        <script type="text/javascript" src="/dist/angular/controllers/contractsController.js"></script>
+        <script type="text/javascript" src="/dist/angular/controllers/footerController.js"></script>
+        <script type="text/javascript" src="/dist/angular/routeProvider.js"></script>  
+    </head>
+    <body>
+        <div ng-view class="fullHeight"></div>
+        <div footer=""></div> 
+    </body>
+</html>

@@ -1,0 +1,56 @@
+<navbar></navbar>
+<div class="container">
+	<div class="row" ng-show="loading">
+		<div class="col-xs-10 col-xs-offset-1">
+			<div class="box">
+				<h3 class="text-center"><i class="fa fa-refresh fa-spin"></i></h3>
+			</div>
+		</div>
+	</div>
+	<div class="row box" ng-show="!loading">
+		<h2 class="text-center">Web3 Info</h2>
+		<h3>Web3:{{web3Info.version}}</h3>
+		<h3>Provider:{{web3Info.provider}}</h3>
+	</div>
+	<div class="row box" ng-show="!loading">
+		<h2 class="text-center">Session Events <button class="btn btn-sm btn-default pull-right" ng-click="cleanHistory()">Clean History</button></h2>
+		<div class="row" ng-repeat="event in appEvents | orderBy: date: true">
+			<div class="col-xs-12">
+				<div ng-if="event.type == 'contract'">
+					<h3>Compilation of contract: {{ event.name }} <span class="pull-right">{{ event.date | date:'short'}}</span></h3>
+					<div id="outputResult">
+						Code
+						<pre>
+							{{ event.code }}
+						</pre>
+					</div>
+					<div id="outputResult">
+						Result:
+						<pre ng-if="event.success">
+							{{ event.result | json:4 }}
+						</pre>
+						<pre ng-if="!event.success">
+							{{ event.result }}
+						</pre>
+					</div>
+				</div>
+				<div ng-if="event.type == 'script'">
+					<h3>Execution of script: {{ event.name }} <span class="pull-right">{{ event.date | date:'short'}}</span></h3>
+					<div id="outputResult">
+						Code:
+						<pre>
+							{{ event.code }}
+						</pre>
+					</div>
+					<div id="outputResult">
+						Result:
+						<pre>
+							{{ event.result }}
+						</pre>
+					</div>
+				</div>
+			</div>
+		</div>
+		<legend ng-show="!$last"></legend>
+	</div>
+</div>

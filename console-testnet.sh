@@ -1,0 +1,1 @@
+geth --genesis ~/.eth-test/genesis.json  --datadir ~/.eth-test --rpc --rpcaddr="0.0.0.0" --verbosity=2 --maxpeers=0 --rpccorsdomain="http://localhost:3000" console
