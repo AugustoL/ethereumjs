@@ -44,7 +44,7 @@ Create a file called password-testnet and put you passoword there.
 
 Now we have our account with teh password on a file we can start mining our testnet, change the directory on the mine-testnet.sh and run it.
 
-`geth --genesis [YOU TESTNET DIRECTORY]/genesis.json --datadir [YOU TESTNET DIRECTORY] --rpc --rpcaddr="0.0.0.0" --verbosity=5 --maxpeers=0 --rpccorsdomain="http://localhost:3000" --nodiscover --unlock=0 --password="password-testnet" --mine`
+`geth --genesis [YOUR TESTNET DIRECTORY]/genesis.json --datadir [YOUR TESTNET DIRECTORY] --rpc --rpcaddr="0.0.0.0" --verbosity=5 --maxpeers=0 --rpccorsdomain="http://localhost:3000" --nodiscover --unlock=0 --password="password-testnet" --mine`
 
 Now that we are mining we can run our app.
 
