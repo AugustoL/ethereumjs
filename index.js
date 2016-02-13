@@ -23,14 +23,10 @@ var args = process.argv.slice(2);
 var app = express();
 process.env.PORT = 3000;
 
-var script_name = "";
-var contract_name = "";
-var db = null;
-
 //Connect
 logger.log(config.dbURI);
 mongoose.connect(config.dbURI);
-db = mongoose.connection;
+var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 
 //Once connected do actions

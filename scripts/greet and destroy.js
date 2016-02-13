@@ -1,12 +1,13 @@
 var fs = require('fs');
 var async = require('async');
 
-module.exports = function(web3,db) {
+module.exports = function(web3, db, finalCallback) {
 	var _greeting = "THANKS!, now im going to be destroyed :C ";
 
 	fs.readFile(__dirname+'/../contracts/greeting.sol', function (err, data) {
         if (err)
-            throw err;
+            finalCallback(err);
+
         var contractSource = data.toString('utf-8');
 	    var contractCompiled = web3.eth.compile.solidity(contractSource);
 
@@ -61,14 +62,15 @@ module.exports = function(web3,db) {
 			        ], function (err) {
 			            if (err){
 			                console.error(err.toString());
-			                throw err;
+			                finalCallback(err);
 			            }
 			            console.log("Contract on "+contract.address+" address destroyed");
+			            finalCallback(contract.address);
 			        });	
 				}
 		    } else {
 		    	console.error(err.toString());
-			    throw err;
+			    finalCallback(err);
 		    }
 		});
 	});

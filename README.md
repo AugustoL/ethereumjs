@@ -64,12 +64,14 @@ Once you are mining you can start another console and go to the app directory, i
 
 `node index.js -dev` or `node index.js`
 
+For test: `npm test`
+
 You can also run it using nodemon for development `nodemon index.js -dev`, the nodemon.json its already attached. See more on http://nodemon.io/
 
 ## TO DO
 
+- [x] Write tests.
 - [ ] Add more contracts.
 - [ ] Add more scripts.
-- [ ] Write tests.
 - [ ] Better documentation.
 

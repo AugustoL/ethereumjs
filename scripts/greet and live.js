@@ -1,12 +1,12 @@
 var fs = require('fs');
 var async = require('async');
 
-module.exports = function(web3,db) {
+module.exports = function(web3, db, finalCallback) {
 	var _greeting = "THANKS !, now im going to live forever and ever happy on the blockchain :D ";
 
 	fs.readFile(__dirname+'/../contracts/greeting.sol', function (err, data) {
         if (err)
-            throw err;
+            finalCallback(err);
         
         var contractSource = data.toString('utf-8');  
 	    var contractCompiled = web3.eth.compile.solidity(contractSource);
@@ -45,14 +45,15 @@ module.exports = function(web3,db) {
 			        ], function (err) {
 			            if (err){
 			                console.error(err.toString());
-			                throw err;
+			                finalCallback(err);
 			            }
 			            console.log(contract.greet());
+			            finalCallback(null, contract.address);
 			        });	
 				}
 		    } else {
 		    	console.error(err.toString());
-			    throw err;
+			    finalCallback(err);
 		    }
 		});
 	});
